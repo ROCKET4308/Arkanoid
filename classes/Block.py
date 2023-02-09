@@ -13,3 +13,6 @@ class Block:
                 if self.position[1] <= ball.position[1] <= self.position[1] + self.height:
                     return True
         return False
+
+    def destroy(self):
+        self.status = "destroyed"
