@@ -5,3 +5,6 @@ class Paddle:
         self.position = position
         self.width = width
         self.height = height
+
+    def move(self, x):
+        self.position[0] += x
