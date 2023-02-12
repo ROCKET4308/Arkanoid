@@ -7,8 +7,9 @@ class Game:
     def __init__(self, screen_size):
         pygame.init()
         self.screen = pygame.display.set_mode(screen_size)
-        self.ball = Ball([100, 100], [0.1, 0.1])
-        self.paddle = Paddle([500, 500], 80, 20)
+        self.clock = pygame.time.Clock()
+        self.ball = Ball([450, 400], [2, 2])
+        self.paddle = Paddle([450, 450], 80, 20)
         self.blocks = [Block([100, 150], 50, 20), Block([200, 150], 50, 20)]
 
     def run(self):
@@ -19,13 +20,16 @@ class Game:
                     running = False
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT]:
-                self.paddle.move(-1)
+                self.paddle.move(-5)
             elif keys[pygame.K_RIGHT]:
-                self.paddle.move(1)
+                self.paddle.move(5)
+            elif keys[pygame.K_ESCAPE]:
+                running = False
             self.update()
             self.render()
             if self.check_game_over():
                 running = False
+            self.clock.tick(60)
         pygame.quit()
 
     def update(self):
@@ -53,5 +57,7 @@ class Game:
 
     def check_game_over(self):
         if self.ball.position[1] > self.screen.get_height():
+            return True
+        elif len([block for block in self.blocks if block.status == "intact"]) == 0:
             return True
         return False
