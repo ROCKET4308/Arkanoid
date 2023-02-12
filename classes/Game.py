@@ -2,6 +2,7 @@ import pygame
 from classes.Ball import Ball
 from classes.Paddle import Paddle
 from classes.Block import Block
+from components.BlocksArray import blocks
 
 class Game:
     def __init__(self, screen_size):
@@ -10,7 +11,8 @@ class Game:
         self.clock = pygame.time.Clock()
         self.ball = Ball([450, 400], [2, 2])
         self.paddle = Paddle([450, 450], 80, 20)
-        self.blocks = [Block([100, 150], 50, 20), Block([200, 150], 50, 20)]
+        self.blocks = blocks
+
 
     def run(self):
         running = True
