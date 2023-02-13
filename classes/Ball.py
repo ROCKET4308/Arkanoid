@@ -1,7 +1,7 @@
 import pygame
 
 class Ball:
-    def __init__(self, position, speed):
+    def __init__(self, position:List[int], speed:int):
         self.position = position
         self.speed = speed
 
