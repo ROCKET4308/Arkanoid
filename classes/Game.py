@@ -77,14 +77,14 @@ class Game:
 
     def render(self):
         """Renders the game objects on the screen."""
-        self.screen.fill((255, 255, 255))
-        pygame.draw.circle(self.screen, (255, 0, 0), self.ball.position, 20)
-        pygame.draw.rect(self.screen, (0, 0, 255), (self.paddle.position[0], self.paddle.position[1], self.paddle.width, self.paddle.height))
+        self.screen.fill((0, 0, 0))
+        pygame.draw.circle(self.screen, (255, 255, 255), self.ball.position, 20)
+        pygame.draw.rect(self.screen, (255, 255, 255), (self.paddle.position[0], self.paddle.position[1], self.paddle.width, self.paddle.height))
         for block in self.blocks:
             if block.status == "intact":
-                pygame.draw.rect(self.screen, (0, 255, 0),(block.position[0], block.position[1], block.width, block.height))
+                pygame.draw.rect(self.screen, (255, 255, 255),(block.position[0], block.position[1], block.width, block.height))
         font = pygame.font.Font(None, 25)
-        score_text = font.render("Score: {}".format(self.score.score), True, (0, 0, 0))
+        score_text = font.render("Score: {}".format(self.score.score), True, (255, 255, 255))
         self.screen.blit(score_text, [0, 0])
         pygame.display.update()
 
