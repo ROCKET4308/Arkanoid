@@ -11,7 +11,7 @@ class Ball:
        Methods:
            move: Updates the position of the ball by adding the speed to the current position.
     """
-    def __init__(self, position:List[int], speed:List[int]):
+    def __init__(self, position: list[int], speed: list[int]):
         """
            The constructor for the Ball class.
 

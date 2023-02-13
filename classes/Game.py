@@ -2,6 +2,7 @@ import pygame
 from classes.Ball import Ball
 from classes.Paddle import Paddle
 from classes.Block import Block
+from classes.Score import Score
 from components.BlocksArray import blocks
 
 class Game:
@@ -34,6 +35,7 @@ class Game:
         self.ball = Ball([450, 400], [2, 2])
         self.paddle = Paddle([450, 450], 80, 20)
         self.blocks = blocks
+        self.score = Score(0)
 
 
     def run(self):
@@ -70,6 +72,7 @@ class Game:
             if block.check_collision(self.ball):
                 block.destroy()
                 self.ball.speed[1] = -self.ball.speed[1]
+                self.score.increase()
 
 
     def render(self):
@@ -80,6 +83,9 @@ class Game:
         for block in self.blocks:
             if block.status == "intact":
                 pygame.draw.rect(self.screen, (0, 255, 0),(block.position[0], block.position[1], block.width, block.height))
+        font = pygame.font.Font(None, 25)
+        score_text = font.render("Score: {}".format(self.score.score), True, (0, 0, 0))
+        self.screen.blit(score_text, [0, 0])
         pygame.display.update()
 
     def check_game_over(self):
