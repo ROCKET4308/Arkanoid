@@ -64,9 +64,9 @@ class Game:
         self.ball.move()
         if self.ball.position[0] <= 0 or self.ball.position[0] >= self.screen.get_width():
             self.ball.speed[0] = -self.ball.speed[0]
-        if self.ball.position[1] <= 0:
+        elif self.ball.position[1] <= 0:
             self.ball.speed[1] = -self.ball.speed[1]
-        if self.paddle.check_collision(self.ball):
+        elif self.paddle.check_collision(self.ball):
             self.ball.speed[1] = -self.ball.speed[1]
         for block in self.blocks:
             if block.check_collision(self.ball):
