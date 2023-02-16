@@ -5,14 +5,14 @@ class Score:
     Class representing a score in the game.
 
     Attributes:
-        score (int): The current score of the game.
+        score: The current score of the game.
     """
-    def __init__(self, score):
+    def __init__(self, score: int):
         """
         The constructor for the Score class.
 
         Parameters:
-            score (int): The starting score for the game.
+            score: The starting score for the game.
         """
         self.score = score
 

@@ -4,27 +4,17 @@ class Block:
     """
     A class representing a Block in a Breakout game.
 
-    ...
+    Attributes:
+        position: A 2-element list representing the position of the Block on the game screen.
+        width:  The width of the Block.
+        height: The height of the Block.
+        status: The status of the Block, either "intact" or "destroyed".
 
-    Attributes
-    ----------
-    position : List[int, int]
-        A 2-element list representing the position of the Block on the game screen.
-    width : int
-        The width of the Block.
-    height : int
-        The height of the Block.
-    status : str
-        The status of the Block, either "intact" or "destroyed".
-
-    Methods
-    -------
-    check_collision(ball)
-        Checks if the ball has collided with the Block.
-    destroy()
-        Changes the status of the Block to "destroyed".
+    Methods:
+        check_collision(ball): Checks if the ball has collided with the Block.
+        destroy(): Changes the status of the Block to "destroyed".
     """
-    def __init__(self, position, width, height):
+    def __init__(self, position: list[int, int], width: int, height: int):
         self.position = position
         self.width = width
         self.height = height
@@ -34,15 +24,11 @@ class Block:
         """
         Checks if the ball has collided with the Block.
 
-        Parameters
-        ----------
-        ball : Ball
-            The Ball object that the collision is being checked against.
+        Parameters:
+            ball : The Ball object that the collision is being checked against.
 
-        Returns
-        -------
-        bool
-            True if the ball has collided with the Block, False otherwise.
+        Returns:
+            bool: True if the ball has collided with the Block, False otherwise.
         """
         if self.status == "intact":
             if self.position[0] <= ball.position[0] <= self.position[0] + self.width:

@@ -5,19 +5,19 @@ class Ball:
        Class representing a ball that can move.
 
        Attributes:
-           position (list): A list of two integers representing the x and y coordinates of the ball's position.
-           speed (list): A list of two integers representing the x and y speed of the ball.
+           position: A list of two integers representing the x and y coordinates of the ball's position.
+           speed: A list of two integers representing the x and y speed of the ball.
 
        Methods:
            move: Updates the position of the ball by adding the speed to the current position.
     """
-    def __init__(self, position: list[int], speed: list[int]):
+    def __init__(self, position: list[int, int], speed: list[int]):
         """
            The constructor for the Ball class.
 
            Parameters:
-                    position (list): A list of two integers representing the x and y coordinates of the ball's position.
-                    speed (list): A list of two integers representing the x and y speed of the ball.
+                    position: A list of two integers representing the x and y coordinates of the ball's position.
+                    speed: A list of two integers representing the x and y speed of the ball.
         """
         self.position = position
         self.speed = speed
