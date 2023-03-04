@@ -11,7 +11,10 @@ def test_ball_move():
     ball.move()
     assert ball.position == [102, 102]
 
-
+def test_paddle_move():
+    paddle = Paddle([500, 500], 80, 20)
+    paddle.move(5)
+    assert paddle.position == [505, 500]
 
 def test_block_destroy():
     block = Block([100, 80], 50, 20)
