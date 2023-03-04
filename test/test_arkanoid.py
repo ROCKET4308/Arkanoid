@@ -16,6 +16,11 @@ def test_paddle_move():
     paddle.move(5)
     assert paddle.position == [505, 500]
 
+def test_paddle_collision():
+    ball = Ball([100, 100], [2, 2])
+    paddle = Paddle([100, 80], 80, 20)
+    assert paddle.check_collision(ball) == True
+
 def test_block_destroy():
     block = Block([100, 80], 50, 20)
     block.destroy()
