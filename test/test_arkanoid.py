@@ -6,6 +6,13 @@ from classes.Game import Game
 from classes.Paddle import Paddle
 from components.BlocksArray import blocks
 
+def test_ball_move():
+    ball = Ball([100, 100], [2, 2])
+    ball.move()
+    assert ball.position == [102, 102]
+
+
+
 def test_block_destroy():
     block = Block([100, 80], 50, 20)
     block.destroy()
