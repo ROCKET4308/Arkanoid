@@ -36,12 +36,13 @@ def test_score_increase():
     score.increase()
     assert score.score == 1
 
+@pytest.mark.skip(reason="git hub does not have available video device")
 def test_game_over():
     game = Game([800, 600])
     game.ball.position = [100, 700]  # Set ball position below screen height
     assert game.check_game_over() == True
 
-
+@pytest.mark.skip(reason="git hub does not have available video device")
 def test_game_over_blocks():
     game = Game([800, 600])
     for block in blocks:
