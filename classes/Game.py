@@ -30,6 +30,7 @@ class Game:
                 screen_size: The size of the screen to display the game.
         """
         pygame.init()
+
         self.screen = pygame.display.set_mode(screen_size)
         self.clock = pygame.time.Clock()
         self.ball = Ball([450, 400], [2, 2])
