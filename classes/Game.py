@@ -22,7 +22,6 @@ class Game:
             render: Renders the game objects on the screen.
             check_game_over: This method checks if the game is over by checking if the ball has fallen out of the screen or if all blocks have been destroyed.
      """
-
     def __init__(self, screen_size: list[int, int]):
         """The constructor for the Game class.
 
