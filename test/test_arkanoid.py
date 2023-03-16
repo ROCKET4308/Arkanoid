@@ -6,6 +6,7 @@ from classes.Game import Game
 from classes.Paddle import Paddle
 from components.BlocksArray import blocks
 
+
 def test_ball_move():
     ball = Ball([100, 100], [2, 2])
     ball.move()
@@ -34,7 +35,7 @@ def test_block_destroy():
 def test_score_increase():
     score = Score(0)
     score.increase()
-    assert score.score != 1
+    assert score.score == 1
 
 @pytest.mark.skip(reason="git hub does not have available video device")
 def test_game_over():
