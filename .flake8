@@ -2,4 +2,4 @@
 max-line-length = 120
 exclude = .git,.idea,.pytest_cache,venv,test
 format = html
-htmldir = flake-report
+htmldir = reports/flake8-html
