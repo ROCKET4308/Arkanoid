@@ -37,9 +37,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Error with pytest-html
-      run: |
-        pytest-html
-    - name: Error with pytest-html
-      run: |
-        flake8-html
